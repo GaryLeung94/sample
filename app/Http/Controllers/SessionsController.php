@@ -33,7 +33,7 @@ class SessionsController extends Controller
                 return redirect()->intended(route('users.show', [Auth::user()]));
             } else {
                 Auth::logout();
-                session->flash('warning', 'You have not activated the account. Please check your email. ');
+                session()->flash('warning', 'You have not activated the account. Please check your email. ');
                 return redirect('/');
             }
         } else {
